@@ -147,90 +147,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2017年小目标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/2017年小目标/">2017年小目标</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/26/2017年小目标/" class="archive-article-date">
-  	<time datetime="2018-02-26T09:42:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>【展望】
-</code></pre><p>①修好里子<br>②理想企业<br>③逐步提升非理性能量<br>④提高整体能力<br>⑤提高专业能力</p>
-<pre><code>【实际】
-</code></pre><p>①有进展    30%<br>②未达标    30%<br>③初入门道  30%<br>④循序渐进  30%<br>⑤循序渐进  30%</p>
-<pre><code>【总结】
-</code></pre><p>个人：<br>①内核似乎调整得好了一些，更使我确信，不安情绪是来自家庭。<br>②交际能力似乎得到了一些提升。<br>③独立能力得到提升。<br>④自我管理能力暴露<br>⑤不强制但有规划性的提升边际能力</p>
-<p>工作：<br>17年3月 放弃老家薪资很不错的工作机会来到上海，主要是3点原因：<br>①自觉上海能轻松找到理想薪资的工作<br>②害怕职业瓶颈，想到理想企业打拼<br>③想找到志同道合的朋友一起创业<br>④躲避家人规划好的人生</p>
-<p>回头看的话似乎不是很明智的决策。</p>
-<p>自己找到了薪资一般的台企Offer，最后选择了薪资稍微高一点的菜菜内推的工作，没什么有挑战性的工作，不是理想的企业。虽然在和前同事推荐的朋友一起搞创业项目，做得不错，但发展境况和预想的有偏差。</p>
-<p>职业技能方面，android技能在循序渐进但速度比较慢地学习以及增长。自学了python、前端、cordova，但都没有深入学习。</p>
-<p>买了csdn的会员，有很多课程，但因为时间原因基本都没用到。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/26/2017年小目标/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-jquery中attr和css方法的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -929,6 +845,95 @@
 
 
   
+    <article id="post-Js基础知识点笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/31/Js基础知识点笔记/">Js基础知识点笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/31/Js基础知识点笔记/" class="archive-article-date">
+  	<time datetime="2018-01-31T09:19:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>解除绑定事件
+</code></pre><p>obj.removeEventListener(“click”,function);</p>
+<p>obj.addEventListener(“click”,function);</p>
+<p>两个function参数 需要为同一个function，猜测注册点击事件时，将回调方法置入了回调方法列表，尝试移除时如果未找到该方法，择默认移除成功(实际没不是在尝试移除特定方法)</p>
+<pre><code>let
+</code></pre><p>let 与var 很相似，从代码规则角度来看，let 用来申明 仅仅局限于某代码块内的变量</p>
+<pre><code>hidden的input
+</code></pre><p>通常用来保存一些需要 暂存 但不需要交互的信息。<br>放在form内，能轻松实现某些参数的无声上传。</p>
+<pre><code>骚操作
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">   * 根据对象标识符</span><br><span class="line">   * 获取对应的对象池</span><br><span class="line">   */</span><br><span class="line">dir = &#123;&#125;;</span><br><span class="line">getUsefulArr(name) &#123;</span><br><span class="line">	return dir [name] || (dir [name] = [] );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>iframe加载完成回调
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var iframe = window.top.document.getElementById(&quot;chatingFrame&quot;);</span><br><span class="line"></span><br><span class="line">if (iframe.attachEvent)&#123;</span><br><span class="line">    iframe.attachEvent(&quot;onload&quot;, function()&#123;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    iframe.onload = function()&#123;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>获取iFrame中的元素
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.top.document.getElementById(&quot;chatingFrame&quot;).contentWindow.document.getElementById(&quot;.dialogue_contain&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code>变量作用域
+</code></pre><p>JS 变量只有函数作用域，没有块作用域，所以在循环中创建匿名函数，并引用变量，当函数真正运行时，调用的始终都是同一个变量。<br>因而，需要将变量作为参数，传入新建的函数中，此时函数在内存中被创建，参数以当时的正确值存储了下来，当运行时，则能返回正确值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/31/Js基础知识点笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1022,11 +1027,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,7 +1039,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1042,15 +1047,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,10 +1067,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cocos游戏开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -1074,15 +1075,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">产品</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
