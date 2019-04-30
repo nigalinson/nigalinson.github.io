@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>glide | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与Context绑定生命周期 利用Context 生成一个空的fragment在fragment中新建一个监听池新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。 设置成功后，图片又马上消失的BUG">
+  <meta name="description" content="与Context绑定生命周期 利用Context 生成一个空的fragment 在fragment中新建一个监听池 新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。 当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。 网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。  设置成功后，图片又马上消失">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="glide">
 <meta property="og:url" content="http://127.0.0.1/2017/07/24/glide/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="与Context绑定生命周期 利用Context 生成一个空的fragment在fragment中新建一个监听池新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。 设置成功后，图片又马上消失的BUG">
+<meta property="og:description" content="与Context绑定生命周期 利用Context 生成一个空的fragment 在fragment中新建一个监听池 新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。 当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。 网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。  设置成功后，图片又马上消失">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.762Z">
+<meta property="og:updated_time" content="2019-04-30T11:35:23.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="glide">
-<meta name="twitter:description" content="与Context绑定生命周期 利用Context 生成一个空的fragment在fragment中新建一个监听池新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。 设置成功后，图片又马上消失的BUG">
+<meta name="twitter:description" content="与Context绑定生命周期 利用Context 生成一个空的fragment 在fragment中新建一个监听池 新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。 当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。 网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。  设置成功后，图片又马上消失">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,10 +167,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>与Context绑定生命周期
-</code></pre><p>利用Context 生成一个空的fragment<br>在fragment中新建一个监听池<br>新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。<br>当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。<br>网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。</p>
-<pre><code>设置成功后，图片又马上消失的BUG
-</code></pre><p>当绑定activity为上下文时，系统会在onPause和onResume生命周期中 自动销毁和重置 图像。如果在onActivityResulr中进行图像设置操作，可能引起 设置成功后，又重新走一遍 glide的重置图像方法，造成异常。</p>
+        <h3 id="与Context绑定生命周期"><a href="#与Context绑定生命周期" class="headerlink" title="与Context绑定生命周期"></a>与Context绑定生命周期</h3><ol>
+<li>利用Context 生成一个空的fragment</li>
+<li>在fragment中新建一个监听池</li>
+<li>新建一个网络请求类，此网络请求实现回调监听，并将此类作为监听置入fragment的监听池中。</li>
+<li>当fragment的生命周期发生变化时，触发监听池中所有有效监听的回调方法。</li>
+<li>网络请求类被触发回调，执行相应的start、stop，进行开始、中断网络请求操作。</li>
+</ol>
+<h3 id="设置成功后，图片又马上消失的BUG"><a href="#设置成功后，图片又马上消失的BUG" class="headerlink" title="设置成功后，图片又马上消失的BUG"></a>设置成功后，图片又马上消失的BUG</h3><p>当绑定activity为上下文时，系统会在onPause和onResume生命周期中 自动销毁和重置 图像。<br>如果在onActivityResulr中进行图像设置操作，可能引起 设置成功后，又重新走一遍 glide的重置图像方法，造成异常。</p>
 
       
 
@@ -408,15 +412,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -424,19 +428,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,23 +448,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

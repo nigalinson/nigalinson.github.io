@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>Java通用技巧 | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Volatile 在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化 Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle">
+  <meta name="description" content="Volatile在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle.p">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java通用技巧">
 <meta property="og:url" content="http://127.0.0.1/2016/05/26/Java通用技巧/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="Volatile 在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化 Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle">
+<meta property="og:description" content="Volatile在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle.p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.756Z">
+<meta property="og:updated_time" content="2019-04-30T11:37:11.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java通用技巧">
-<meta name="twitter:description" content="Volatile 在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化 Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle">
+<meta name="twitter:description" content="Volatile在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。 序列化Serializable   – 效率低下 ，但使用方便，Bundle.putSerializable(Key，Object)， 另一种是Bundle.p">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,12 +167,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>Volatile
-</code></pre><p>在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。<br>虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。</p>
-<pre><code>序列化
-</code></pre><p>Serializable   – 效率低下 ，但使用方便，<br>Bundle.putSerializable(Key，Object)，</p>
-<p>另一种是Bundle.putParcelable(Key，Object)<br>Parcelable  –效率高，但需要重载方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">public class Book implements Parcelable</span><br><span class="line">&#123;</span><br><span class="line">    private String bookName;</span><br><span class="line">    private String author;</span><br><span class="line">    private int publishDate;</span><br><span class="line">    </span><br><span class="line">    public Book()</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public String getBookName()</span><br><span class="line">    &#123;</span><br><span class="line">        return bookName;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void setBookName(String bookName)</span><br><span class="line">    &#123;</span><br><span class="line">        this.bookName = bookName;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public String getAuthor()</span><br><span class="line">    &#123;</span><br><span class="line">        return author;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void setAuthor(String author)</span><br><span class="line">    &#123;</span><br><span class="line">        this.author = author;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int getPublishDate()</span><br><span class="line">    &#123;</span><br><span class="line">        return publishDate;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void setPublishDate(int publishDate)</span><br><span class="line">    &#123;</span><br><span class="line">        this.publishDate = publishDate;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @Override</span><br><span class="line">    public int describeContents()</span><br><span class="line">    &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @Override</span><br><span class="line">    public void writeToParcel(Parcel out, int flags)</span><br><span class="line">    &#123;</span><br><span class="line">        out.writeString(bookName);</span><br><span class="line">        out.writeString(author);</span><br><span class="line">        out.writeInt(publishDate);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public static final Parcelable.Creator&lt;Book&gt; CREATOR = new Creator&lt;Book&gt;()</span><br><span class="line">    &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public Book[] newArray(int size)</span><br><span class="line">        &#123;</span><br><span class="line">            return new Book[size];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @Override</span><br><span class="line">        public Book createFromParcel(Parcel in)</span><br><span class="line">        &#123;</span><br><span class="line">            return new Book(in);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    public Book(Parcel in)</span><br><span class="line">    &#123;</span><br><span class="line">        bookName = in.readString();</span><br><span class="line">        author = in.readString();</span><br><span class="line">        publishDate = in.readInt();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h3><p>在多线程状态下，有些对象是不稳定的。因而volatile表示每次调用该对象，都重新从内存中获取，而不是直接引用取值。<br>虽然取值是从内从中直接取，但其操作并不是原子性的。不能产生synchronize严格包裹整个代码块的效果。</p>
+<h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>Serializable   – 效率低下 ，但使用方便，<br>Bundle.putSerializable(Key，Object)，</p>
+<p>另一种是Bundle.putParcelable(Key，Object)<br>Parcelable  –效率高，但需要重载方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> <span class="keyword">implements</span> <span class="title">Parcelable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String bookName;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> publishDate;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getBookName</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bookName;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBookName</span><span class="params">(String bookName)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.bookName = bookName;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> author;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPublishDate</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> publishDate;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPublishDate</span><span class="params">(<span class="keyword">int</span> publishDate)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.publishDate = publishDate;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">describeContents</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToParcel</span><span class="params">(Parcel out, <span class="keyword">int</span> flags)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        out.writeString(bookName);</span><br><span class="line">        out.writeString(author);</span><br><span class="line">        out.writeInt(publishDate);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Parcelable.Creator&lt;Book&gt; CREATOR = <span class="keyword">new</span> Creator&lt;Book&gt;()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> Book[] newArray(<span class="keyword">int</span> size)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Book[size];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Book <span class="title">createFromParcel</span><span class="params">(Parcel in)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Book(in);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(Parcel in)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        bookName = in.readString();</span><br><span class="line">        author = in.readString();</span><br><span class="line">        publishDate = in.readInt();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -409,15 +407,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,19 +423,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,23 +443,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,7 +514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

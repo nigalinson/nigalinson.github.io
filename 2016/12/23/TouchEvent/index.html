@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>TouchEvent | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：1、dispa">
+  <meta name="description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：  dispa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TouchEvent">
 <meta property="og:url" content="http://127.0.0.1/2016/12/23/TouchEvent/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：1、dispa">
+<meta property="og:description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：  dispa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.759Z">
+<meta property="og:updated_time" content="2019-04-30T11:43:43.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TouchEvent">
-<meta name="twitter:description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：1、dispa">
+<meta name="twitter:description" content="触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。 dispatch不断级联调用,直至：  dispa">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -105,7 +105,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,7 +167,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>触摸事件传递到ViewGroup时，触发ViewGroup自身的dispatchTouchEvent()回调，该方法中调用自身的onInterceptTouchEvent()，如果返回false，则继续调用子控件的dispatch；如果返回true，则表示该触摸事件被拦截掉，不再dispatch，而直接调用自身的onTouchEvent()回调。</p>
-<p>dispatch不断级联调用,直至：<br>1、dispatch到最底层View，开始调用最底层View的onTouchEvent()回调。<br>2、或某intercept拦截直接调用该onTouchEvent()。</p>
+<p>dispatch不断级联调用,直至：</p>
+<ol>
+<li>dispatch到最底层View，开始调用最底层View的onTouchEvent()回调。</li>
+<li>或某intercept拦截直接调用该onTouchEvent()。</li>
+</ol>
 <p>onTouchEvent有一个返回值，dispatch的返回值默认与之相同。而dispatch的返回值决定是否继续上抛touch处理回调。<br>所以onTouchEvent默认是决定是否继续上抛的(因为dispatch默认值与之相同，但其实关键是dispatch的返回值)。<br>如果dispatch返回false，则TouchEvent可以继续被上抛，如果返回true，则表示该次事件的投递已成功，父控件直接回调dispatch return true，而不再走touchEvent。</p>
 
       
@@ -395,15 +399,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -411,19 +415,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,23 +435,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,7 +506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>KFI图像 | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。12345678910111213141516171819202122232425262728293031323334353637private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stre">
+  <meta name="description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。123456789101112131415161718192021222324252627282930313233343536private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stream">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KFI图像">
 <meta property="og:url" content="http://127.0.0.1/2016/12/06/KFI图像/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。12345678910111213141516171819202122232425262728293031323334353637private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stre">
+<meta property="og:description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。123456789101112131415161718192021222324252627282930313233343536private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stream">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.756Z">
+<meta property="og:updated_time" content="2019-04-30T11:40:12.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KFI图像">
-<meta name="twitter:description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。12345678910111213141516171819202122232425262728293031323334353637private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stre">
+<meta name="twitter:description" content="KFI 图像将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。123456789101112131415161718192021222324252627282930313233343536private KFImage getSampleImage() &amp;#123;    InputStream stream = null;    try &amp;#123;        stream">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>KFI 图像<br>将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">private KFImage getSampleImage() &#123;</span><br><span class="line">    InputStream stream = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        stream = getResources().getAssets().open(&quot;sample_file&quot;);</span><br><span class="line">        KFImage sampleImage = KFImageDeserializer.deserialize(stream);</span><br><span class="line">        return sampleImage;</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if (stream != null) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                stream.close();</span><br><span class="line">            &#125; catch (IOException ignored) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">final Drawable logoDrawable = getResources().getDrawable(R.drawable.keyframes_launcher);</span><br><span class="line">if (logoDrawable != null) &#123;</span><br><span class="line">    logoDrawable.setBounds(0, 0, 80, 80);</span><br><span class="line">    mKeyFramesDrawable = new KeyframesDrawableBuilder()</span><br><span class="line">            .withImage(mKfImage)</span><br><span class="line">            .withMaxFrameRate(60)</span><br><span class="line">            .withExperimentalFeatures()</span><br><span class="line">            .withParticleFeatureConfigs(</span><br><span class="line">                    Pair.create(&quot;keyframes&quot;, Pair.create(logoDrawable, new Matrix())))</span><br><span class="line">            .build();</span><br><span class="line">&#125;</span><br><span class="line">mKeyFramesDrawable.startAnimation();</span><br><span class="line"></span><br><span class="line">final ImageView imageView = (ImageView) findViewById(R.id.sample_image_view);</span><br><span class="line">imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);</span><br><span class="line">imageView.setImageDrawable(mKeyFramesDrawable);</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+        <p>KFI 图像<br>将图像动画序列化存储为本地JSON格式；需要使用时读取，并展示动画。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">private KFImage getSampleImage() &#123;</span><br><span class="line">    InputStream stream = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        stream = getResources().getAssets().open(&quot;sample_file&quot;);</span><br><span class="line">        KFImage sampleImage = KFImageDeserializer.deserialize(stream);</span><br><span class="line">        return sampleImage;</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if (stream != null) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                stream.close();</span><br><span class="line">            &#125; catch (IOException ignored) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">final Drawable logoDrawable = getResources().getDrawable(R.drawable.keyframes_launcher);</span><br><span class="line">if (logoDrawable != null) &#123;</span><br><span class="line">    logoDrawable.setBounds(0, 0, 80, 80);</span><br><span class="line">    mKeyFramesDrawable = new KeyframesDrawableBuilder()</span><br><span class="line">            .withImage(mKfImage)</span><br><span class="line">            .withMaxFrameRate(60)</span><br><span class="line">            .withExperimentalFeatures()</span><br><span class="line">            .withParticleFeatureConfigs(</span><br><span class="line">                    Pair.create(&quot;keyframes&quot;, Pair.create(logoDrawable, new Matrix())))</span><br><span class="line">            .build();</span><br><span class="line">&#125;</span><br><span class="line">mKeyFramesDrawable.startAnimation();</span><br><span class="line"></span><br><span class="line">final ImageView imageView = (ImageView) findViewById(R.id.sample_image_view);</span><br><span class="line">imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);</span><br><span class="line">imageView.setImageDrawable(mKeyFramesDrawable);</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -405,15 +405,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -421,19 +421,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,23 +441,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +512,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

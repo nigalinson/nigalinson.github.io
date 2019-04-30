@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>transition | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三元素：Scene、Transition、TransitionManager Scene Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition 过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上">
+  <meta name="description" content="三元素：Scene、Transition、TransitionManager SceneScene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="transition">
 <meta property="og:url" content="http://127.0.0.1/2017/12/27/transition/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="三元素：Scene、Transition、TransitionManager Scene Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition 过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上">
+<meta property="og:description" content="三元素：Scene、Transition、TransitionManager SceneScene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.767Z">
+<meta property="og:updated_time" content="2019-04-30T11:44:29.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="transition">
-<meta name="twitter:description" content="三元素：Scene、Transition、TransitionManager Scene Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition 过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上">
+<meta name="twitter:description" content="三元素：Scene、Transition、TransitionManager SceneScene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。 Transition过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -168,15 +168,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>三元素：Scene、Transition、TransitionManager</p>
-<pre><code>Scene
-</code></pre><p>Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。</p>
-<pre><code>Transition
-</code></pre><p>过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可以看到系统内置了一些常用的Transition，Transition的创建可以通过加载xml，也可以代码直接初始化。</p>
-<pre><code>TransitionManeger
-</code></pre><p>用于将Scene和Transition联系起来，它提供了一系列的方法如setTransition(Scene fromScene, Scene toScene, Transition transition)指明起始场景和结束场景、他们的过渡动画是什么，go(Scene scene, Transition transition)，到指定的场景所使用的过渡动画是什么，beginDelayedTransition(ViewGroup sceneRoot, Transition transition)，在当前场景到下一帧的过渡效果是什么。</p>
-<pre><code>PathMotion
-</code></pre><p>Transition的辅助工具，以path的方式指定过渡效果，两个具体实现类ArcMotion和PatternPathMotion，看下ArcMotion的效果。<br>mTransition = new AutoTransition();<br>mTransition.setPathMotion(new ArcMotion());<br>TransitionManager.beginDelayedTransition(mRoot, mTransition);</p>
-
+<h3 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h3><p>Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。</p>
+<h3 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h3><p>过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可以看到系统内置了一些常用的Transition，Transition的创建可以通过加载xml，也可以代码直接初始化。</p>
+<h3 id="TransitionManeger"><a href="#TransitionManeger" class="headerlink" title="TransitionManeger"></a>TransitionManeger</h3><p>用于将Scene和Transition联系起来，它提供了一系列的方法如setTransition(Scene fromScene, Scene toScene, Transition transition)指明起始场景和结束场景、他们的过渡动画是什么，go(Scene scene, Transition transition)，到指定的场景所使用的过渡动画是什么，beginDelayedTransition(ViewGroup sceneRoot, Transition transition)，在当前场景到下一帧的过渡效果是什么。</p>
+<h3 id="Transition的辅助工具"><a href="#Transition的辅助工具" class="headerlink" title="Transition的辅助工具"></a>Transition的辅助工具</h3><p>以path的方式指定过渡效果，两个具体实现类ArcMotion和PatternPathMotion，看下ArcMotion的效果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mTransition = <span class="keyword">new</span> AutoTransition();</span><br><span class="line">mTransition.setPathMotion(<span class="keyword">new</span> ArcMotion());</span><br><span class="line">TransitionManager.beginDelayedTransition(mRoot, mTransition);</span><br></pre></td></tr></table></figure>
       
 
       
@@ -280,18 +276,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/29/ActivityManager/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/29/Activity/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ActivityManager
+          Activity
         
       </div>
     </a>
   
   
-    <a href="/2017/12/26/Activity的mParent成员变量/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Activity的mParent成员变量</div>
+    <a href="/2017/12/22/Annotation-InDef/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Annotation-InDef</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -413,15 +409,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,19 +425,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,23 +445,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,7 +516,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

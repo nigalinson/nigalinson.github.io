@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>jquery中attr和css方法的区别 | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.attr是用来获得或设置标签属性的（attribute的缩写）123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
-<meta name="keywords" content="Jquery">
+  <meta name="description" content="attr是用来获得或设置标签属性的（attribute的缩写） 123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jquery中attr和css方法的区别">
 <meta property="og:url" content="http://127.0.0.1/2018/02/26/jquery中attr和css方法的区别/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="1.attr是用来获得或设置标签属性的（attribute的缩写）123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
+<meta property="og:description" content="attr是用来获得或设置标签属性的（attribute的缩写） 123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.767Z">
+<meta property="og:updated_time" content="2019-04-30T11:37:46.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery中attr和css方法的区别">
-<meta name="twitter:description" content="1.attr是用来获得或设置标签属性的（attribute的缩写）123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
+<meta name="twitter:description" content="attr是用来获得或设置标签属性的（attribute的缩写） 123456789101112var myId = $(&amp;quot;#myId&amp;quot;);myId.attr(&amp;quot;data-name&amp;quot;, &amp;quot;baidu&amp;quot;);// 设置属性名data-name，值baidu// 结果为 ： &amp;lt;div id=&amp;quot;myId&amp;quot; data-na">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,8 +167,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.attr是用来获得或设置标签属性的（attribute的缩写）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myId = $(&quot;#myId&quot;);</span><br><span class="line">myId.attr(&quot;data-name&quot;, &quot;baidu&quot;);</span><br><span class="line">// 设置属性名data-name，值baidu</span><br><span class="line">// 结果为 ： &lt;div id=&quot;myId&quot; data-name=&quot;baidu&quot;&gt;&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">var attr = myId.attr(&quot;data-name&quot;); // 获取</span><br><span class="line"> </span><br><span class="line">//相对于</span><br><span class="line">var myId = document.getElementById(&quot;myId&quot;);</span><br><span class="line">myId.setAttribute(&quot;data-name&quot;, &quot;baidu&quot;); // 设置</span><br><span class="line">myId.getAttribute(&quot;data-name&quot;); // 获取</span><br><span class="line"> </span><br></pre></td></tr></table></figure></p>
-<p>2.css是设置元素的style样式的</p>
+        <ol>
+<li><p>attr是用来获得或设置标签属性的（attribute的缩写）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myId = $(&quot;#myId&quot;);</span><br><span class="line">myId.attr(&quot;data-name&quot;, &quot;baidu&quot;);</span><br><span class="line">// 设置属性名data-name，值baidu</span><br><span class="line">// 结果为 ： &lt;div id=&quot;myId&quot; data-name=&quot;baidu&quot;&gt;&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">var attr = myId.attr(&quot;data-name&quot;); // 获取</span><br><span class="line"> </span><br><span class="line">//相对于</span><br><span class="line">var myId = document.getElementById(&quot;myId&quot;);</span><br><span class="line">myId.setAttribute(&quot;data-name&quot;, &quot;baidu&quot;); // 设置</span><br><span class="line">myId.getAttribute(&quot;data-name&quot;); // 获取</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css是设置元素的style样式的</p>
+</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var myId = $(&quot;#myId&quot;);</span><br><span class="line">myId.css(&quot;background-color&quot;, &quot;red&quot;); // 设置背景颜色为红色</span><br><span class="line">var bg = myId.css(&quot;background-color&quot;); // 获取背景颜色</span><br><span class="line"> </span><br><span class="line">//相对于</span><br><span class="line">var myId = document.getElementById(&quot;myId&quot;);</span><br><span class="line">myId.style.backgroundColor = &quot;red&quot;; // 设置</span><br><span class="line">var bg = myId.style.backgroundColor; // 获取</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
@@ -203,7 +208,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Jquery</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -406,15 +411,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,19 +427,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,23 +447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,7 +518,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

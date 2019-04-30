@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>MVP数据的摆放 | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。 1.如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。2.如复用presenter时，可以被公用的数据，放在对应需求的presenter中。3.不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
+  <meta name="description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。  如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。 如复用presenter时，可以被公用的数据，放在对应需求的presenter中。 不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVP数据的摆放">
 <meta property="og:url" content="http://127.0.0.1/2017/08/31/MVP设计模式的一些思考/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。 1.如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。2.如复用presenter时，可以被公用的数据，放在对应需求的presenter中。3.不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
+<meta property="og:description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。  如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。 如复用presenter时，可以被公用的数据，放在对应需求的presenter中。 不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.757Z">
+<meta property="og:updated_time" content="2019-04-30T11:42:52.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVP数据的摆放">
-<meta name="twitter:description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。 1.如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。2.如复用presenter时，可以被公用的数据，放在对应需求的presenter中。3.不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
+<meta name="twitter:description" content="数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。  如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。 如复用presenter时，可以被公用的数据，放在对应需求的presenter中。 不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -168,7 +168,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>数据的存放位置取决于 数据 最小 可以被复用的层级，层级越小耦合度越低。</p>
-<p>1.如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。<br>2.如复用presenter时，可以被公用的数据，放在对应需求的presenter中。<br>3.不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。</p>
+<ol>
+<li>如同分页请求的 页码数据，几乎是可以跟分页请求本身绑定在同一个model中的数值。不论哪个页面，要调用该分页请求的话，都能公用该页码数据。</li>
+<li>如复用presenter时，可以被公用的数据，放在对应需求的presenter中。</li>
+<li>不同View拥有的各自不同的单一特性数据，则可以直接放在activity中。</li>
+</ol>
 
       
 
@@ -406,15 +410,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,19 +426,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,23 +446,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,7 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>AccessibilityService | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="①用户打开无障碍模式，发送一个注册用广播，通知到Accessibility Manager Service；②Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder；③Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传">
+  <meta name="description" content="用户打开无障碍模式，发送一个注册用广播，通知到 Accessibility Manager Service Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传到">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AccessibilityService">
 <meta property="og:url" content="http://127.0.0.1/2018/01/29/AccessibilityService/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="①用户打开无障碍模式，发送一个注册用广播，通知到Accessibility Manager Service；②Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder；③Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传">
+<meta property="og:description" content="用户打开无障碍模式，发送一个注册用广播，通知到 Accessibility Manager Service Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-13T11:45:24.743Z">
+<meta property="og:updated_time" content="2019-04-30T11:13:03.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AccessibilityService">
-<meta name="twitter:description" content="①用户打开无障碍模式，发送一个注册用广播，通知到Accessibility Manager Service；②Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder；③Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传">
+<meta name="twitter:description" content="用户打开无障碍模式，发送一个注册用广播，通知到 Accessibility Manager Service Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传到">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
 		  <h1 class="header-author"><a href="/">Nigalinson</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">鲜衣怒马，兼济天下</p>
+		<p class="header-subtitle">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</p>
 		
 
 		<nav class="header-menu">
@@ -106,7 +106,7 @@
 			  <h1 class="header-author js-header-author">Nigalinson</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>鲜衣怒马，兼济天下<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,7 +167,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>①用户打开无障碍模式，发送一个注册用广播，通知到Accessibility Manager Service；<br>②Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder；<br>③Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传到主线程化处理，并调用IBinder反馈给AS；<br>④AS被IBinder触发onAccessibilityEvent()回调；<br>⑤开发者重写该回调，进行无障碍辅助操作。</p>
+        <ol>
+<li>用户打开无障碍模式，发送一个注册用广播，通知到 <strong>Accessibility Manager Service</strong></li>
+<li>Accessibility Manager Service 绑定一个 Accessibility Service，并通过onBind获取跨进程操作AS的IBinder</li>
+<li>Accessibility Manager Service获取到View变化Event，通过主线程Handler把事件传到主线程化处理，并调用IBinder反馈给AS</li>
+<li>AS被IBinder触发onAccessibilityEvent()回调</li>
+<li>开发者重写该回调，进行无障碍辅助操作</li>
+</ol>
 
       
 
@@ -272,11 +278,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/31/Js基础知识点笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/07/Java内存/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Js基础知识点笔记
+          Java内存
         
       </div>
     </a>
@@ -405,15 +411,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">多媒体开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Design</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -421,19 +427,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机常识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Jquery</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,23 +447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +518,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">鲜衣怒马，兼济天下</div>
   	  	
     	</section>
     
