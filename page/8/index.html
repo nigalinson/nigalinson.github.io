@@ -591,6 +591,83 @@
 
 
   
+    <article id="post-Looper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/24/Looper/">Looper</a>
+    </h1>
+  
+
+        
+        <a href="/2016/01/24/Looper/" class="archive-article-date">
+  	<time datetime="2016-01-24T07:59:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>主线程为什么不会被Looper.loop()阻塞？</li>
+</ul>
+<p>因为Activity的生命周期是同Looper绑定在一起的,正常的代码块执行完后，系统就应该被关闭了，而Activity可以持续存在，就是因为其内部是一个死循环，也就是Looper的循环，Activity的许多操作也都是由Lopper的消息盏完成的。因此主线程初始化时会自动开启Lopper循环，消息队列中没完全消息时，会自动阻塞住，有消息触发时，再唤醒。异步线程是不会自动开启Looper循环的，因此在异步线程中使用handler发送消息后，消息会置入队列中，但handler回调并不会触发，因为消息队列没有开启循环，无法循环取消息执行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/01/24/Looper/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MessageDigest散列码生成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -660,83 +737,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/01/24/MessageDigest散列码生成/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Looper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/24/Looper/">Looper</a>
-    </h1>
-  
-
-        
-        <a href="/2016/01/24/Looper/" class="archive-article-date">
-  	<time datetime="2016-01-24T07:59:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>主线程为什么不会被Looper.loop()阻塞？</li>
-</ul>
-<p>因为Activity的生命周期是同Looper绑定在一起的,正常的代码块执行完后，系统就应该被关闭了，而Activity可以持续存在，就是因为其内部是一个死循环，也就是Looper的循环，Activity的许多操作也都是由Lopper的消息盏完成的。因此主线程初始化时会自动开启Lopper循环，消息队列中没完全消息时，会自动阻塞住，有消息触发时，再唤醒。异步线程是不会自动开启Looper循环的，因此在异步线程中使用handler发送消息后，消息会置入队列中，但handler回调并不会触发，因为消息队列没有开启循环，无法循环取消息执行。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/01/24/Looper/">展开全文 >></a>
         </p>
       
 
@@ -867,11 +867,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,11 +887,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">

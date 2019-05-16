@@ -388,9 +388,9 @@
 <h4 id="无法搜索到设备"><a href="#无法搜索到设备" class="headerlink" title="无法搜索到设备"></a>无法搜索到设备</h4><p>已经确认获得了蓝牙和GPS权限，但有时仍然会出现搜索不到任何设备</p>
 <blockquote>
 <p><strong>原因</strong>：</p>
-<p>Android底层对单位时间内的检索次数进行了限制，如果反复进行 【检索-停止-检索-停止…】若干次后，在一定时间内，虽然依然可以正常调用检索接口，但回调中就再也无法检索到任何设备了。</p>
+<p>查看AOSP代码review记录发现，Android底层对单位时间内的检索次数进行了限制，如果反复进行 【检索-停止-检索-停止…】，在30秒内搜索5次以上，第6次虽然依然可以正常调用检索接口，但回调中就再也无法检索到任何设备了。</p>
 <p><strong>解决方案</strong>：</p>
-<p>由于是Android的底层限制，在Application层面上是无法强行解决这个问题的，只能强制控制两次检索之间必须间隔10秒以上(实际不同机型上不同，有些机型甚至第一次就会搜索不到设备，测试发现间隔10秒左右能涵盖大部分机型）</p>
+<p>由于是Android的底层限制，在Application层面上是无法强行解决这个问题的，只能强制控制每次检索之间必须间隔30/5 = 6秒以上(实际不同机型上不同，有些机型甚至第一次就会搜索不到设备，测试发现间隔10秒左右能涵盖大部分机型）</p>
 </blockquote>
 <h4 id="133错误"><a href="#133错误" class="headerlink" title="133错误"></a>133错误</h4><p>某些手机反复【连接-断开】操作5次左右后，就再也无法连接指定设备了</p>
 <blockquote>
@@ -1124,11 +1124,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1144,11 +1144,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
