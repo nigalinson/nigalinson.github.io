@@ -225,6 +225,100 @@
 
 
   
+    <article id="post-HTTPS协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/23/HTTPS协议/">HTTPS协议</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/23/HTTPS协议/" class="archive-article-date">
+  	<time datetime="2019-05-23T07:44:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="什么是HTTPS协议"><a href="#什么是HTTPS协议" class="headerlink" title="什么是HTTPS协议"></a>什么是HTTPS协议</h4><p>HTTPS协议在HTTP协议和TCP协议之间增加了一条TLS(SSL)加密信道，增加了安全性</p>
+<blockquote>
+<p>HTTP协议：超文本传输协议是OSI七层网络模型中的应用层协议，用于规定一些具体信息层面具象的传输格式。传统的HTTP协议并不会对信息做加密处理，只要知道IP和端口，建立连接后，可以随意传输信息。</p>
+</blockquote>
+<blockquote>
+<p>非对称加密：非对称加密算法需要两个密钥——公开密钥（publickey:简称公钥）和私有密钥（privatekey:简称私钥）。公钥与私钥是一对，如果用公钥对数据进行加密，只有用对应的私钥才能解密。</p>
+</blockquote>
+<h4 id="HTTPS协议基本原理"><a href="#HTTPS协议基本原理" class="headerlink" title="HTTPS协议基本原理"></a>HTTPS协议基本原理</h4><blockquote>
+<ol>
+<li>服务端到 <strong>CA(证书颁发机构)</strong> 申请指定域名(域名所有权)的私钥证书，生成公钥</li>
+<li>客户端向域名发起请求</li>
+<li>服务端下发公钥</li>
+<li>客户端获得公钥，并验证其合法性(一般由浏览器直接完成)</li>
+<li>客户端生成一串随机密钥，加密明文，同时用公钥加密此密钥，一同返还服务器</li>
+<li>服务器获得密文和加密密钥，用私钥解密密钥，用密钥解密密文，获得明文。用密钥加密明文，传回客户端</li>
+<li>客户端获得传回的密文，用密钥解密，获得明文</li>
+<li>一次完整HTTPS传输结束</li>
+</ol>
+</blockquote>
+<h5 id="HTTPS协议原理图"><a href="#HTTPS协议原理图" class="headerlink" title="HTTPS协议原理图"></a>HTTPS协议原理图</h5> <img src="/2019/05/23/HTTPS协议/https.jpg">
+<h5 id="HTTPS为什么不能被破解"><a href="#HTTPS为什么不能被破解" class="headerlink" title="HTTPS为什么不能被破解"></a>HTTPS为什么不能被破解</h5><p>由于采用非对称加密，客户端的随机密钥必须要有私钥解密才能获得，而目前非对称加密只能暴力碰撞破解(耗时极高)，因此可以保证其安全性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/23/HTTPS协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-android快速适配方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -948,81 +1042,6 @@
 
 
   
-    <article id="post-读书的意义" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/26/读书的意义/">读书的意义</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/26/读书的意义/" class="archive-article-date">
-  	<time datetime="2018-02-26T09:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2018/02/26/读书的意义/1.jpg">
-<p>与碎片阅读的区别。<br>能提高对复杂信息的适应能力，读万卷书行万里路。<br>当你日渐发现社会运行的本质时，越会觉得无法忍受，越容易变得失去耐心，变得暴躁，阅读能提高失落的阈值</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/26/读书的意义/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1124,7 +1143,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1136,15 +1163,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,15 +1171,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
+                <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">产品</a>
+                <a href="javascript:void(0)" class="js-tag color4">社会学</a>
               </li>
              
               <li class="article-tag-list-item">
