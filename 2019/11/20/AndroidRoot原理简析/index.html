@@ -8,21 +8,20 @@
   <link rel="dns-prefetch" href="http://127.0.0.1">
   <title>AndroidRoot原理简析 | Nigalinson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是ROOT先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理Android小米9 构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel  )&amp;gt;">
+  <meta name="description" content="先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel   Android 的底层如文件管理、用户、权限管">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AndroidRoot原理简析">
 <meta property="og:url" content="http://127.0.0.1/2019/11/20/AndroidRoot原理简析/index.html">
 <meta property="og:site_name" content="Nigalinson">
-<meta property="og:description" content="什么是ROOT先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理Android小米9 构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel  )&amp;gt;">
+<meta property="og:description" content="先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel   Android 的底层如文件管理、用户、权限管">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://127.0.0.1/2019/11/20/AndroidRoot原理简析/小米9.jpg">
 <meta property="og:image" content="http://127.0.0.1/2019/11/20/AndroidRoot原理简析/android架构图.png">
-<meta property="og:updated_time" content="2019-11-20T05:24:52.606Z">
+<meta property="og:updated_time" content="2019-11-25T06:20:41.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidRoot原理简析">
-<meta name="twitter:description" content="什么是ROOT先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理Android小米9 构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel  )&amp;gt;">
-<meta name="twitter:image" content="http://127.0.0.1/2019/11/20/AndroidRoot原理简析/小米9.jpg">
+<meta name="twitter:description" content="先说结论：  使手机 /system/bin/ 目录下的su可执行文件的拥有setUID权限  就完成了ROOT 基本原理构成 System Apps/Applications framework Natice C/C++ Libraries JVM Runtime/ Android Runtime HAL(硬件抽象层) Linux Kernel   Android 的底层如文件管理、用户、权限管">
+<meta name="twitter:image" content="http://127.0.0.1/2019/11/20/AndroidRoot原理简析/android架构图.png">
   
     <link rel="alternative" href="/atom.xml" title="Nigalinson" type="application/atom+xml">
   
@@ -170,13 +169,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么是ROOT"><a href="#什么是ROOT" class="headerlink" title="什么是ROOT"></a>什么是ROOT</h1><p>先说结论：</p>
+        <p>先说结论：</p>
 <blockquote>
 <p>使手机 <strong>/system/bin/</strong> 目录下的<strong>su</strong>可执行文件的拥有<strong>setUID</strong>权限</p>
 </blockquote>
 <p>就完成了ROOT</p>
-<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="小米9"><a href="#小米9" class="headerlink" title="小米9"></a>小米9</h4><img src="/2019/11/20/AndroidRoot原理简析/小米9.jpg">
-<h4 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h4><ul>
+<h1 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h1><h2 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h2><ul>
 <li>System Apps/Applications</li>
 <li>framework</li>
 <li>Natice C/C++ Libraries</li>
@@ -184,7 +182,29 @@
 <li>HAL(硬件抽象层)</li>
 <li>Linux Kernel</li>
 </ul>
-<img src="/2019/11/20/AndroidRoot原理简析/android架构图.png">)<br><br>&gt; Android 的底层如文件管理、用户、权限管理等，还是基于Linux的<br><br>#### 手机的ROOT的意义<br><br>- 删除系统内置APP<br>- 定制系统<br>- 玩XPOSED等魔改框架<br><br>##### 例子：如何删除内置APP<br><br>做不到，因为：<br><br>1. 系统不会提供删除界面，常规APP拖动或应用管理中有删除，系统应用没有<br>2. adb 命令直接删除，会提示permission denied无权限<br><br>为什么？<br><br>&gt; 应用删除的本质是将安装好的文件从目录中删除，而系统APP安装在 <strong>linux</strong> 挂载的 <strong>/system/app/</strong> 目录下，普通用户是没有该目录的写权限的。<br><br><br>### Linux<br><br>#### 用户和权限管理<br><br>&gt; linux和类Unix系统的最初都是多用户操作系统，ROOT用户是整个系统的唯一管理员，拥有所有权限。一旦获取到root权限，就可以对整个系统进行访问和修改。<br><br>#### 怎样获取Linux的root权限<br><br> 在讨论获取ROOT前，有一个非常重要的概念，就是文件的setUID权限。<br><br> ##### setUID<br><br> linux下普通的文件权限，可读，可写，可执行 -rwx<br><br> &gt; shell:<br><br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//查看文件权限</span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure>
+<img src="/2019/11/20/AndroidRoot原理简析/android架构图.png">
+<p>Android 的底层如文件管理、用户、权限管理等，还是基于Linux的</p>
+<h1 id="手机的ROOT的意义"><a href="#手机的ROOT的意义" class="headerlink" title="手机的ROOT的意义"></a>手机的ROOT的意义</h1><ul>
+<li>删除系统内置APP</li>
+<li>定制系统</li>
+<li>玩XPOSED等魔改框架</li>
+</ul>
+<h2 id="例子：如何删除内置APP"><a href="#例子：如何删除内置APP" class="headerlink" title="例子：如何删除内置APP"></a>例子：如何删除内置APP</h2><p>做不到，因为：</p>
+<ol>
+<li>系统不会提供删除界面，常规APP拖动或应用管理中有删除，系统应用没有</li>
+<li>adb 命令直接删除，会提示permission denied无权限</li>
+</ol>
+<p>为什么？</p>
+<blockquote>
+<p>应用删除的本质是将安装好的文件从目录中删除，而系统APP安装在 <strong>linux</strong> 挂载的 <strong>/system/app/</strong> 目录下，普通用户是没有该目录的写权限的。</p>
+</blockquote>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="用户和权限管理"><a href="#用户和权限管理" class="headerlink" title="用户和权限管理"></a>用户和权限管理</h2><blockquote>
+<p>linux和类Unix系统的最初都是多用户操作系统，ROOT用户是整个系统的唯一管理员，拥有所有权限。一旦获取到root权限，就可以对整个系统进行访问和修改。</p>
+</blockquote>
+<h2 id="怎样获取Linux的root权限"><a href="#怎样获取Linux的root权限" class="headerlink" title="怎样获取Linux的root权限"></a>怎样获取Linux的root权限</h2><p> 在讨论获取ROOT前，有一个非常重要的概念，就是文件的setUID权限。</p>
+<h3 id="setUID"><a href="#setUID" class="headerlink" title="setUID"></a>setUID</h3><p> linux下普通的文件权限，可读，可写，可执行 -rwx</p>
+<p><em>shell</em>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//查看文件权限</span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure>
 <p>但是，要考虑一种情况，比如说，一个用户是有权修改自己的密码的，但是记录密码的文件/etc/shadow只有root用户才是可写的，那普通用户如何才能修改自己的密码呢？</p>
 <p>这一切都要归功于setUID的设置，修改密码时使用的命令passwd对应的二进制程序是/usr/bin/passwd</p>
 <p>可以看到passwd的二进制文件的权限位中不仅仅是rwx了，多了一个s权限，而这个s权限就是我们的主角，setUID权限。</p>
@@ -192,30 +212,35 @@
 <h5 id="那如何设置setUID权限呢？"><a href="#那如何设置setUID权限呢？" class="headerlink" title="那如何设置setUID权限呢？"></a>那如何设置setUID权限呢？</h5><p>平常使用的普通文件权限位是由3、３、３共9位的二进制数字组成　<br>－－－｜－－－｜－－－<br>分别对应文件所有者，文件所有者同一用户组权限和其他用户权限。最开始的名为root的可执行文件的权限为rwxrwxr-x，所对应的二进制位就是111 111 101 ，然后每三位对应421换算成16进制，就是775。</p>
 <p>而新增的setUID权限是在前面新增了三位，分别表示setGID、setUID、stick bit权限，而我们现在只关心setUID权限。<br>因此加上setUID权限之后，文件的权限应该由4位数字组成，例如之前的root文件加上setUID权限就是4755。而修改密码的passwd文件对应的权限位就是4755。</p>
 <ul>
-<li><p>nigalinson读取文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>切换到chris</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>chris读取文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看cat 权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /bin/cat -l</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看 hello权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>root模式下授予cat setUID权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod u+s /bin/cat</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>chris读取文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
-</li>
+<li>nigalinson读取文件</li>
 </ul>
-<h4 id="Android下的ROOT权限"><a href="#Android下的ROOT权限" class="headerlink" title="Android下的ROOT权限"></a>Android下的ROOT权限</h4><p>在/system/bin下 放一个拥有setUID权限可执行su文件，即可已ROOT权限操作系统</p>
-<h1 id="理论上的ROOT步骤"><a href="#理论上的ROOT步骤" class="headerlink" title="理论上的ROOT步骤"></a>理论上的ROOT步骤</h1><ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换到chris</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略</span><br></pre></td></tr></table></figure>
+<ul>
+<li>chris读取文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看cat 权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /bin/cat -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看 hello权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li>root模式下授予cat setUID权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod u+s /bin/cat</span><br></pre></td></tr></table></figure>
+<ul>
+<li>chris读取文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat hello</span><br></pre></td></tr></table></figure>
+<h2 id="Android下的ROOT权限"><a href="#Android下的ROOT权限" class="headerlink" title="Android下的ROOT权限"></a>Android下的ROOT权限</h2><p>在/system/bin下 放一个拥有setUID权限可执行su文件，即可已ROOT权限操作系统</p>
+<h1 id="ROOT步骤"><a href="#ROOT步骤" class="headerlink" title="ROOT步骤"></a>ROOT步骤</h1><ol>
 <li><p>adb push su /system/bin</p>
 </li>
 <li><p>adb push SuperUser.apk /system/app</p>
@@ -223,7 +248,7 @@
 <li><p>adb shell chmod 4755 /system/bin/su</p>
 </li>
 </ol>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ol>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li>有些系统发行版中，直接删除了/system/bin下的 <strong>SU</strong> 文件</li>
 <li><strong>/system/bin</strong> 目录本身需要ROOT权限才能修改</li>
 <li>设置setUID权限同样需要ROOT权限</li>
@@ -231,11 +256,11 @@
 <blockquote>
 <p>陷入了一个死循环</p>
 </blockquote>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h3 id="Android-4-3之前"><a href="#Android-4-3之前" class="headerlink" title="Android 4.3之前"></a>Android 4.3之前</h3><p>许多原生系统进程本身是以ROOT权限运行的，可以利用他们的一些漏洞，借他们的手来修改授予SU文件setUID权限</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="Android-4-3之前"><a href="#Android-4-3之前" class="headerlink" title="Android 4.3之前"></a>Android 4.3之前</h3><p>许多原生系统进程本身是以ROOT权限运行的，可以利用他们的一些漏洞，借他们的手来修改授予SU文件setUID权限</p>
 <h3 id="4-3以后"><a href="#4-3以后" class="headerlink" title="4.3以后"></a>4.3以后</h3><p>Andorid引入SELinux内核，限制进程安全访问边界，而且system分区多被挂载为nosuid，也就是SetUid位直接无效了。</p>
 <h4 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h4><p>换掉整个文件管理系统，解除SU限制</p>
 <h4 id="输入BOOT-IMG"><a href="#输入BOOT-IMG" class="headerlink" title="输入BOOT.IMG"></a>输入BOOT.IMG</h4><p>单独刷入boot.img，修改/system/挂载规则，或使用户具有/system/路径的操作权限</p>
-<h1 id="刷入的具体操作"><a href="#刷入的具体操作" class="headerlink" title="刷入的具体操作"></a>刷入的具体操作</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="BootLoader"><a href="#BootLoader" class="headerlink" title="BootLoader"></a>BootLoader</h3><p>在嵌入式操作系统中，BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。在嵌入式系统中，通常并没有像BIOS那样的固件程序（注，有的嵌入式CPU也会内嵌一段短小的启动程序），因此整个系统的加载启动任务就完全由BootLoader来完成。在一个基于ARM7TDMI core的嵌入式系统中，系统在上电或复位时通常都从地址0x00000000处开始执行，而在这个地址处安排的通常就是系统的BootLoader程序　</p>
+<h2 id="刷入的具体操作"><a href="#刷入的具体操作" class="headerlink" title="刷入的具体操作"></a>刷入的具体操作</h2><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="BootLoader"><a href="#BootLoader" class="headerlink" title="BootLoader"></a>BootLoader</h3><p>在嵌入式操作系统中，BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。在嵌入式系统中，通常并没有像BIOS那样的固件程序（注，有的嵌入式CPU也会内嵌一段短小的启动程序），因此整个系统的加载启动任务就完全由BootLoader来完成。在一个基于ARM7TDMI core的嵌入式系统中，系统在上电或复位时通常都从地址0x00000000处开始执行，而在这个地址处安排的通常就是系统的BootLoader程序　</p>
 <h3 id="BL锁就是bootloader锁"><a href="#BL锁就是bootloader锁" class="headerlink" title="BL锁就是bootloader锁"></a>BL锁就是bootloader锁</h3><p>BL从安卓问世以来一直存在，它的功能在我看来应该是限制用户刷第三方ROM和降级系统。在锁住bl的情况下，用户是根本不可能刷第三方ROM和第三方recovery的，最多也就是刷个基于官方的精简包。bl还有一个恶心的限制就是root，所有要root的机器，都必须解锁才能获取。那有人就问了，为什么以前的老机器和安卓4点几的机子都可以一键root呢，这是因为以前的机器bl锁等级低，我们可以利用bl锁的漏洞，绕过bl解锁。然而现在的系统BL等级比较高，自然就无法绕过BL锁去root了。</p>
 <h3 id="REC"><a href="#REC" class="headerlink" title="REC"></a>REC</h3><p>REC是Recovery的缩写，是每部安卓机出厂时自带的恢复模式，不过那都是官方的Recovery。Recovery就是像是电脑上的小型winPE系统，winPE可以在电脑上安装操作系统，或者做些备份、管理的工作。如果把手机比喻成房屋，那么地皮就像手机的硬件，房子像手机系统，建房子的各种工具就是就是Recovery了。官方Recovery只能用来刷入官方的系统，如果你想刷入别的系统，只能通过第三方Recovery来实现，但是，你平时所用到的在线升级也就是OTA升级，是基于官方Rec的，如果你刷入了第三方Rec，OTA升级就会失败。</p>
 <h3 id="TWRPTWRP"><a href="#TWRPTWRP" class="headerlink" title="TWRPTWRP"></a>TWRPTWRP</h3><p>国外android爱好者开发的一个第三方REC，全名是：TeamWin Recovery Project，也是我们现在刷第三方ROM通常用到的REC。</p>
@@ -248,12 +273,12 @@
 <li>线刷/卡刷-刷入准备好的镜像</li>
 </ul>
 <p><a href="http://bbs.gfan.com/" target="_blank" rel="noopener">机锋论坛</a></p>
-<h1 id="更酷的办法"><a href="#更酷的办法" class="headerlink" title="更酷的办法"></a>更酷的办法</h1><h2 id="常规做法的弊端"><a href="#常规做法的弊端" class="headerlink" title="常规做法的弊端"></a>常规做法的弊端</h2><ul>
+<h2 id="更酷的办法"><a href="#更酷的办法" class="headerlink" title="更酷的办法"></a>更酷的办法</h2><h3 id="常规做法的弊端"><a href="#常规做法的弊端" class="headerlink" title="常规做法的弊端"></a>常规做法的弊端</h3><ul>
 <li>刷入三方recovery后会令OTA升级失效</li>
 <li>而且有些场景下系统发现ROOT后会禁用一些功能</li>
 <li>…(不能闷声大发财)</li>
 </ul>
-<h2 id="闷声大发财的Magisk"><a href="#闷声大发财的Magisk" class="headerlink" title="闷声大发财的Magisk"></a>闷声大发财的Magisk</h2><h4 id="Magisk-是如何工作的？"><a href="#Magisk-是如何工作的？" class="headerlink" title="Magisk 是如何工作的？"></a>Magisk 是如何工作的？</h4><p>Magisk 另辟蹊径，通过挂载一个与系统文件相隔离的文件系统来加载自定义内容，为系统分区打开了一个通往平行世界的入口，所有改动在那个世界（Magisk 分区）里发生，在必要的时候却又可以被认为是（从系统分区的角度而言）没有发生过。</p>
+<h3 id="闷声大发财的Magisk"><a href="#闷声大发财的Magisk" class="headerlink" title="闷声大发财的Magisk"></a>闷声大发财的Magisk</h3><h4 id="Magisk-是如何工作的？"><a href="#Magisk-是如何工作的？" class="headerlink" title="Magisk 是如何工作的？"></a>Magisk 是如何工作的？</h4><p>Magisk 另辟蹊径，通过挂载一个与系统文件相隔离的文件系统来加载自定义内容，为系统分区打开了一个通往平行世界的入口，所有改动在那个世界（Magisk 分区）里发生，在必要的时候却又可以被认为是（从系统分区的角度而言）没有发生过。</p>
 <p>Magisk 的实现方式就像是一种魔法，当被挂载的 Magisk 分区被隐藏甚至被取消挂载时，原有系统分区的完整性丝毫未损，玩需要 root 验证的游戏、运行对设备认证状态有要求的应用甚至进行需要验证系统完整性的 OTA 更新都没有任何问题。</p>
 <p>可通过 SafetyNet 认证并有针对性地隐藏 root<br>因此严格来说 Magisk 可以被看作是一种文件系统，这种文件系统通过巧妙的实现方式避开了对系统文件的直接修改，从稳定性上来看要优于以往任何一种系统框架，这也是当前它在玩机社区广受认可和好评的原因所在。</p>
 <h4 id="衍生生态"><a href="#衍生生态" class="headerlink" title="衍生生态"></a>衍生生态</h4><p>既然用了「开外挂」的实现方式，那不妨就多挂载一些额外的东西，字体、音效、驱动……甚至 Xposed 本身。Magisk 提供了一个独立于系统分区以外的、可以随时隐形的「沙盒」，那自然不能将其才华禁锢于 root 这一件事上。在 Magisk 的模块仓库里，我们可以找到各式各样的模块（modules）来满足自己的定制化需求，借助这些模块，我们在 root 之后能做的事情其实也还有很多。</p>
@@ -262,7 +287,7 @@
 <li>常规方法安装并获取root后，拥有挂载隐藏分区的能力</li>
 <li>删除三方recovery</li>
 </ul>
-<h1 id="结束，谢谢大家"><a href="#结束，谢谢大家" class="headerlink" title="结束，谢谢大家"></a>结束，谢谢大家</h1><hr>
+<hr>
 
       
 
@@ -500,11 +525,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,11 +537,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">

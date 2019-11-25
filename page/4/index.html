@@ -147,84 +147,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-transition" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/27/transition/">transition</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/27/transition/" class="archive-article-date">
-  	<time datetime="2017-12-27T07:49:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>三元素：Scene、Transition、TransitionManager</p>
-<h3 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h3><p>Scene场景，用于保存布局中所有View的属性值，创建Scene的方式可以通过getSceneForLayout方法。</p>
-<h3 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h3><p>过渡动画，前面创建了两个场景，分别保存了视图的一些属性，比如Visibility、position等，Transition就是对于这些属性值的改变定义过渡的效果。从上图可以看到系统内置了一些常用的Transition，Transition的创建可以通过加载xml，也可以代码直接初始化。</p>
-<h3 id="TransitionManeger"><a href="#TransitionManeger" class="headerlink" title="TransitionManeger"></a>TransitionManeger</h3><p>用于将Scene和Transition联系起来，它提供了一系列的方法如setTransition(Scene fromScene, Scene toScene, Transition transition)指明起始场景和结束场景、他们的过渡动画是什么，go(Scene scene, Transition transition)，到指定的场景所使用的过渡动画是什么，beginDelayedTransition(ViewGroup sceneRoot, Transition transition)，在当前场景到下一帧的过渡效果是什么。</p>
-<h3 id="Transition的辅助工具"><a href="#Transition的辅助工具" class="headerlink" title="Transition的辅助工具"></a>Transition的辅助工具</h3><p>以path的方式指定过渡效果，两个具体实现类ArcMotion和PatternPathMotion，看下ArcMotion的效果。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mTransition = <span class="keyword">new</span> AutoTransition();</span><br><span class="line">mTransition.setPathMotion(<span class="keyword">new</span> ArcMotion());</span><br><span class="line">TransitionManager.beginDelayedTransition(mRoot, mTransition);</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/27/transition/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Annotation-InDef" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -901,6 +823,79 @@
 
 
   
+    <article id="post-YUV码流的内存存储方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/05/YUV码流的内存存储方式/">YUV码流的内存存储方式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/05/YUV码流的内存存储方式/" class="archive-article-date">
+  	<time datetime="2017-12-05T06:42:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a href="http://blog.csdn.net/yuanhubilie/article/details/37930429" target="_blank" rel="noopener">参考资料</a>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">音视频</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/05/YUV码流的内存存储方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -994,11 +989,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1006,11 +1001,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
