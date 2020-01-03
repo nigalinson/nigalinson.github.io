@@ -147,6 +147,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-算法常识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/05/算法常识/">算法常识</a>
+    </h1>
+  
+
+        
+        <a href="/2016/07/05/算法常识/" class="archive-article-date">
+  	<time datetime="2016-07-05T09:25:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.根据数据结构来设计合理的算法，不能为了模块化而不顾数据结构的合理性。<br>程序 = 算法 + 抽象数据类型(数据结构)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/07/05/算法常识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-论分工" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -811,104 +874,6 @@
 
 
   
-    <article id="post-MessageDigest散列码生成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/24/MessageDigest散列码生成/">MessageDigest散列码生成</a>
-    </h1>
-  
-
-        
-        <a href="/2016/01/24/MessageDigest散列码生成/" class="archive-article-date">
-  	<time datetime="2016-01-24T07:59:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>java.security.MessageDigest类用于为应用程序提供信息摘要算法的功能，如 MD5 或 SHA 算法。简单点说就是用于生成散列码。信息摘要是安全的单向哈希函数，它接收任意大小的数据，输出固定长度的哈希值。关于信息摘要和散列码请参照《数字证书简介》<br>MessageDigest 通过其getInstance系列静态函数来进行实例化和初始化。MessageDigest 对象通过使用 update 方法处理数据。任何时候都可以调用 reset 方法重置摘要。一旦所有需要更新的数据都已经被更新了，应该调用 digest 方法之一完成哈希计算并返回结果。</p>
-<p>对于给定数量的更新数据，digest 方法只能被调用一次。digest 方法被调用后，MessageDigest  对象被重新设置成其初始状态。</p>
-<p>MessageDigest 的实现可随意选择是否实现 Cloneable 接口。客户端应用程可以通过尝试复制和捕获 CloneNotSupportedException 测试可复制性：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">MessageDigest md = MessageDigest.getInstance(<span class="string">"SHA"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">    md.update(toChapter1);</span><br><span class="line"></span><br><span class="line">    MessageDigest tc1 = md.clone();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">byte</span>[] toChapter1Digest = tc1.digest();</span><br><span class="line"></span><br><span class="line">    md.update(toChapter2);</span><br><span class="line"></span><br><span class="line">    ...etc.</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (CloneNotSupportedException cnse) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> DigestException(<span class="string">"couldn't make digest of partial content"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意1"><a href="#注意1" class="headerlink" title="注意1"></a>注意1</h3><p>即时给定MessageDigest的实现是不可复制的，则仍然能够通过getInstance方法实例化几个实例计算来同时进行摘要信息的计算。</p>
-<h3 id="注意2"><a href="#注意2" class="headerlink" title="注意2"></a>注意2</h3><p>由于历史原因，此类是抽象的，是从 MessageDigestSpi 扩展的。应用程序开发人员只应该注意在此 MessageDigest 类中定义的方法；超类中的所有方法是供希望提供自己的信息摘要算法实现的加密服务提供者使用的。 </p>
-<h3 id="注意3"><a href="#注意3" class="headerlink" title="注意3"></a>注意3</h3><p>MessageDigest并不是单实例的。如下代码所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	MessageDigest mdTemp1 = MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line"></span><br><span class="line">	MessageDigest mdTemp2= MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line"></span><br><span class="line">	MessageDigest mdTemp3= MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line"></span><br><span class="line">	System.out.println(<span class="string">"mdTemp1==mdTemp2?:"</span>+(mdTemp1==mdTemp2));</span><br><span class="line"></span><br><span class="line">	System.out.println(<span class="string">"mdTemp2==mdTemp3?:"</span>+(mdTemp2==mdTemp3));</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e)&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line"></span><br><span class="line">	e.printStackTrace();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mdTemp1==mdTemp2?:<span class="keyword">false</span></span><br><span class="line"></span><br><span class="line">mdTemp2==mdTemp3?:<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-<p>构造方法摘要<br>protected    MessageDigest(String algorithm)<br>          创建具有指定算法名称的MessageDigest 实例对象。<br>方法摘要<br> Object    clone()<br>          如果实现是可复制的，则返回一个副本。<br> byte[]    digest()<br>          通过执行诸如填充之类的最终操作完成哈希计算。<br> byte[]    digest(byte[] input)<br>          使用指定的字节数组对摘要进行最后更新，然后完成摘要计算。<br> int    digest(byte[] buf, int offset, int len)<br>          通过执行诸如填充之类的最终操作完成哈希计算。<br> String    getAlgorithm()<br>          返回标识算法的独立于实现细节的字符串。<br> int    getDigestLength()<br>          返回以字节为单位的摘要长度，如果提供程序不支持此操作并且实现是不可复制的，则返回 0。<br>static MessageDigest    getInstance(String algorithm)<br>          生成实现指定摘要算法的 MessageDigest 对象。<br>static MessageDigest    getInstance(String algorithm, Provider provider)<br>          生成实现指定提供程序提供的指定算法的 MessageDigest 对象，如果该算法可从指定的提供程序得到的话。<br>static MessageDigest    getInstance(String algorithm, String provider)<br>          生成实现指定提供程序提供的指定算法的 MessageDigest 对象，如果该算法可从指定的提供程序得到的话。<br> Provider    getProvider()<br>          返回此信息摘要对象的提供程序。<br>static boolean    isEqual(byte[] digesta, byte[] digestb)<br>          比较两个摘要的相等性。<br> void    reset()<br>          重置摘要以供再次使用。<br> String    toString()<br>          返回此信息摘要对象的字符串表示形式。<br> void    update(byte input)<br>          使用指定的字节更新摘要。<br> void    update(byte[] input)<br>          使用指定的字节数组更新摘要。<br> void    update(byte[] input, int offset, int len)<br>          使用指定的字节数组，从指定的偏移量开始更新摘要。<br> void    update(ByteBuffer input)<br>          使用指定的 ByteBuffer 更新摘要。<br>二、实际实践<br>2.1、创建 MessageDigest 对象<br>计算信息摘（即散列码）要做的第一步是创建 MessageDigest对象 实例。像所有的引擎类一样，获取某类报文摘要算法（即散列算法，比如MD5）的  MessageDigest 对象的途径是调用 MessageDigest 类中的 getInstance 静态 factory 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static MessageDigest getInstance(String algorithm)</span><br></pre></td></tr></table></figure>
-<p>注意：算法名不区分大小写。例如，以下所有调用都是相等的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MessageDigest.getInstance(&quot;SHA&quot;);</span><br><span class="line">MessageDigest.getInstance(&quot;sha&quot;);</span><br><span class="line">MessageDigest.getInstance(&quot;sHa&quot;);</span><br></pre></td></tr></table></figure>
-<p>调用程序可选择指定提供者名称，以保证所要求的算法是由已命名提供者实现的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static MessageDigest getInstance(String algorithm, String provider);</span><br></pre></td></tr></table></figure>
-<p>调用 getInstance 将返回已初始化过的MessageDigest对象。因此，它不需要进一步的初始化。<br>2.2、向MessageDigest传送要计算的数据<br>计算数据的摘要的第二步是向已初始化的MessageDigest对象提供传送要计算的数据。这将通过一次或多次调用以下某个 update（更新）方法来完成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void update(byte input);</span><br><span class="line">public void update(byte[] input);</span><br><span class="line">public void update(byte[] input, int offset, int len);</span><br></pre></td></tr></table></figure><br>2.3、计算摘要<br>通过调用 update 方法向MessageDigest对象提传送要计算的数据后，你就可以调用以下某个 digest（摘要）方法来计算摘要（即生成散列码）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public byte[] digest();</span><br><span class="line">public byte[] digest(byte[] input);</span><br><span class="line">public int digest(byte[] buf, int offset, int len);</span><br></pre></td></tr></table></figure><br>前两个方法返回计算出的摘要。后一个方法把计算出的摘要储存在所提供的 buf 缓冲区中，起点是 offset。len 是 buf 中分配给该摘要的字节数。该方法返回实际存储在 buf 中的字节数。<br>对第二个接受输入字节数组变量的 digest 方法的调用等价于用指定的输入调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public void update(byte[] input)</span><br></pre></td></tr></table></figure></p>
-<p>，接着调用不带参数的 digest 方法.<br>三、例子演示<br>3.1、★ 编程思路：<br>java.security包中的MessageDigest类提供了计算消息摘要（即生成散列码）的方法，首先生成对象，执行其update( )方法可<br>以将原始数据传递给该对象，然后执行其digest( )方法即可得到消息摘要。具体步骤如下：<br>（1）生成MessageDigest对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MessageDigest m=MessageDigest.getInstance(&quot;MD5&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>MessageDigest类也是一个工厂类，其构造器是受保护的，不允许<br>直接使用new MessageDigist( )来创建对象，而必须通过其静态方法getInstance( )生成MessageDigest对象。<br>其中传入的参数指定计算消息摘要所使用的算法，常用的有”MD5”，”SHA”等。<br>（2）传入需要计算的字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m.update(x.getBytes(&quot;UTF8&quot; ));</span><br></pre></td></tr></table></figure></p>
-<p>分析：x为需要计算的字符串，update传入的参数是字节类型或字节类型数组，对于字符串，需要先使用getBytes( )方法生成字符串数组。<br>（3）计算消息摘要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">byte s[ ]=m.digest( );</span><br></pre></td></tr></table></figure></p>
-<p>分析：执行MessageDigest对象的digest( )方法完成计算，计算的结果通过字节类型的数组返回。<br>（4）处理计算结果<br>必要的话可以使用如下代码将计算结果(byte数组)转换为字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">static String convertToHexString(byte data[]) &#123;</span><br><span class="line">	StringBuffer strBuffer = new StringBuffer();</span><br><span class="line">	for (int i = 0; i &lt; data.length; i++) &#123;</span><br><span class="line">		strBuffer.append(Integer.toHexString(0xff &amp; data[i]));</span><br><span class="line">	&#125;</span><br><span class="line">	return strBuffer.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>3.2、示例一<br>★完整程序如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class MessageDigestDemo extends Thread &#123;</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		String text = &quot;abc&quot;;</span><br><span class="line">		byte data[] = null;</span><br><span class="line">		MessageDigest m;</span><br><span class="line">		try &#123;</span><br><span class="line">			data = text.getBytes(&quot;UTF8&quot;);</span><br><span class="line">			m = MessageDigest.getInstance(&quot;MD5&quot;);</span><br><span class="line">			m.update(data);</span><br><span class="line">			byte resultData[] = m.digest();</span><br><span class="line">			System.out.println(convertToHexString(resultData));</span><br><span class="line">		&#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	static String convertToHexString(byte data[]) &#123;</span><br><span class="line">		StringBuffer strBuffer = new StringBuffer();</span><br><span class="line">		for (int i = 0; i &lt; data.length; i++) &#123;</span><br><span class="line">			strBuffer.append(Integer.toHexString(0xff &amp; data[i]));</span><br><span class="line">		&#125;</span><br><span class="line">		return strBuffer.toString();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>★运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">900150983cd24fb0d6963f7d28e17f72</span><br></pre></td></tr></table></figure></p>
-<p> 3.3、示例二<br>在这里我们将对计算生成的md5使用 sun.misc.BASE64Encoder进行简单的加密。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public String md5sumWithEncoder(String text) throws NoSuchAlgorithmException, </span><br><span class="line">UnsupportedEncodingException&#123;</span><br><span class="line">    /*确定计算方法*/</span><br><span class="line">    MessageDigest md5=MessageDigest.getInstance(&quot;MD5&quot;);</span><br><span class="line">    BASE64Encoder base64en = new BASE64Encoder();</span><br><span class="line">    /*加密后的散列码字符串*/</span><br><span class="line">    String strMd5=base64en.encode(md5.digest(text.getBytes(&quot;utf-8&quot;)));</span><br><span class="line">    return strMd5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str=&quot;0123456789&quot;</span><br><span class="line">System.out.println（md5sumWithEncoder（str））；</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/01/24/MessageDigest散列码生成/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -923,7 +888,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Nigalinson
+    		&copy; 2020 Nigalinson
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
@@ -1014,15 +979,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Hbuilder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
